@@ -22,7 +22,7 @@ var reload = require("reload");
 /**
  * For set port or default 7000 posr.
  */
-app.set("port", process.env.POST || 7000);
+app.set("port", process.env.PORT || 7000);
 /**
  * Set view engine & point a view folder.
  */
@@ -68,7 +68,7 @@ app.use(require("./routers/pages"));
 /**
  * Create server.
  */
-var server = app.listen(7000, function () {
+var server = app.listen(process.env.PORT || 7000, function () {
   console.log("Running server");
 });
 /**
